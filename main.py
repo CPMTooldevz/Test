@@ -656,9 +656,9 @@ if __name__ == "__main__":
                     print(Colorate.Horizontal(Colors.rainbow, '[!] Please use valid values.'))
                     sleep(2)
                     continue
-              else: continue
-             break
-         break
+            else: continue
+            break
+        break
             
         
             
