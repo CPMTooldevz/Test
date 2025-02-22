@@ -162,7 +162,7 @@ if __name__ == "__main__":
             load_player_data(cpm)
             load_key_data(cpm)
             load_client_details()
-            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28"]
+            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29"]
             print(Colorate.Horizontal(Colors.rainbow, '{01}: Increase Money           1.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{02}: Increase Coins           4.5K'))
             print(Colorate.Horizontal(Colors.rainbow, '{03}: King Rank                8K'))
@@ -640,9 +640,25 @@ if __name__ == "__main__":
                     print(Colorate.Horizontal(Colors.rainbow, 'PLEASE TRY AGAIN'))
                     sleep(2)
                     continue                                        
-            else: continue
-            break
-        break
+            elif service == 29:
+                console.print("[bold yellow][!] Note[/bold yellow]: original speed can not be restored!.")
+                console.print("[bold cyan][!] Enter Car Details.[/bold cyan]")
+                car_id = IntPrompt.ask("[bold][?] Car Id[/bold]")
+                console.print("[bold cyan][%] Hacking Car Speed[/bold cyan]:",end=None)
+                if cpm.hack_car_speed(car_id):
+                    console.print("[bold green]SUCCESFUL (✔)[/bold green]")
+                    console.print("================================")
+                    answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
+                    if answ == "y": print(Colorate.Horizontal(Colors.rainbow, f'Thank You for using our tool, please join our telegram channe: @{__CHANNEL_USERNAME__}.'))
+                    else: continue
+                else:
+                    print(Colorate.Horizontal(Colors.rainbow, 'FAILED.'))
+                    print(Colorate.Horizontal(Colors.rainbow, '[!] Please use valid values.'))
+                    sleep(2)
+                    continue
+             else: continue
+             break
+         break
             
         
             
