@@ -649,7 +649,7 @@ if __name__ == "__main__":
                 new_nm = IntPrompt.ask("[bold][?] Enter new NM[/bold]")
                 new_torque = IntPrompt.ask("[bold][?] Enter new Torque[/bold]")
                 console.print("[bold cyan][%] Hacking Car Speed[/bold cyan]: ", end=None)        
-                if cpm.hack_car_speed(car_id, new_hp, new_inner_hp, new_nm, new_torque):  
+                if cpm.hack_car_speed(car_id):  
                     console.print("[bold green]SUCCESFUL (✔)[/bold green]")
                     console.print("================================")
                     answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
