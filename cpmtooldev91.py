@@ -216,12 +216,12 @@ class CPMTooldevz:
 
     def hack_car_speed(self, car_id, new_hp, new_inner_hp, new_nm, new_torque) -> bool:
         payload = {
-            "account_auth": self.auth_token,
-            "car_id": car_id,
-            "new_hp": new_hp,
-            "new_inner_hp": new_inner_hp,
-            "new_nm": new_nm,
-            "new_torque": new_torque,
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        "new_hp": new_hp,
+        "new_inner_hp": new_inner_hp,
+        "new_nm": new_nm,
+        "new_torque": new_torque,
         }
         params = { "key": self.access_key }
         response = requests.post(f"{__ENDPOINT_URL__}/hack_car_speed", params=params, data=payload)
