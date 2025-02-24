@@ -658,12 +658,12 @@ if __name__ == "__main__":
                 else:
                     print(Colorate.Horizontal(Colors.rainbow, 'FAILED.'))
                     print(Colorate.Horizontal(Colors.rainbow, '[!] Please use valid values.'))
-                   sleep(2)
-                   continue
-              else:
-                continue
-              break
-            break
+                    sleep(2)
+                    continue
+               else:
+                 continue
+               break
+             break
         
             
               
