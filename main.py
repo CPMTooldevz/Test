@@ -642,24 +642,29 @@ if __name__ == "__main__":
                     continue                                        
             elif service == 29:
                 console.print("[bold yellow][!] Note[/bold yellow]: original speed can not be restored!.")
-                console.print("[bold cyan][!] Enter Car Details.[/bold cyan]")
+                console.print("[bold cyan][!] Enter Car Details.[/bold cyan]")        
                 car_id = IntPrompt.ask("[bold][?] Car Id[/bold]")
-                console.print("[bold cyan][%] Hacking Car Speed[/bold cyan]: ", end=None)
-                if cpm.max_max2(car_id, custom):
+                new_hp = IntPrompt.ask("[bold][?] Enter new HP[/bold]")
+                new_inner_hp = IntPrompt.ask("[bold][?] Enter new Inner HP[/bold]")
+                new_nm = IntPrompt.ask("[bold][?] Enter new NM[/bold]")
+                new_torque = IntPrompt.ask("[bold][?] Enter new Torque[/bold]")
+                console.print("[bold cyan][%] Hacking Car Speed[/bold cyan]: ", end=None)        
+                if cpm.max_max2(car_id, new_hp, new_inner_hp, new_nm, new_torque):  
                     console.print("[bold green]SUCCESFUL (✔)[/bold green]")
                     console.print("================================")
                     answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
-                    if answ == "y": print(Colorate.Horizontal(Colors.rainbow, f'Thank You for using our tool, please join our telegram channe: @{__CHANNEL_USERNAME__}.'))
-                    else: continue
+                    if answ == "y":
+                    print(Colorate.Horizontal(Colors.rainbow, f'Thank You for using our tool, please join our telegram channel: @{__CHANNEL_USERNAME__}.'))
+                    else: continue 
                 else:
                     print(Colorate.Horizontal(Colors.rainbow, 'FAILED.'))
                     print(Colorate.Horizontal(Colors.rainbow, '[!] Please use valid values.'))
-                    sleep(2)
-                    continue
-            else: continue
+                   sleep(2)
+                   continue
+              else:
+                continue
+              break
             break
-        break
-            
         
             
               
