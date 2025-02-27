@@ -613,7 +613,7 @@ if __name__ == "__main__":
                 console.print("[bold cyan][!] Enter Car Details.[/bold cyan]")
                 car_id = IntPrompt.ask("[bold][?] Car Id[/bold]")
                 console.print("[bold cyan][%] Hacking Car Speed[/bold cyan]:",end=None)
-                if cpm.hack_car_speed(car_id):
+                if cpm.hack_car_sped(car_id):
                     console.print("[bold green]SUCCESFUL (✔)[/bold green]")
                     console.print("================================")
                     answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
