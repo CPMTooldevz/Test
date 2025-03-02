@@ -74,7 +74,8 @@ def load_player_data(cpm):
             print(Colorate.Horizontal(Colors.rainbow, f'Friends Count: {data["friends_count", "UNDEFINED"]}.'))    
         else:
             print(Colorate.Horizontal(Colors.rainbow, '! ERROR: new accounts most be signed-in to the game at least once !.'))
-            exit(1)
+            sleep(1)
+            continue
     else:
         print(Colorate.Horizontal(Colors.rainbow, '! ERROR: seems like your login is not properly set !.'))
         exit(1)
