@@ -57,7 +57,7 @@ def load_player_data(cpm):
     response = cpm.get_player_data()
     if response.get('ok'):
         data = response.get('data')
-        if 'floats' in data and 'localID' in data and 'money' in data and 'coin' in data:
+        if 'floats' in data and 'localID' in data and 'money' in data and 'coin' in data and 'friends_count' in data and 'count_cars' in data:
         
             print(Colorate.Horizontal(Colors.rainbow, '==========[ PLAYER DETAILS ]=========='))
             
