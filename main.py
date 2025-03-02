@@ -57,7 +57,7 @@ def load_player_data(cpm):
     response = cpm.get_player_data()
     if response.get('ok'):
         data = response.get('data')
-        if all(k in data for k in ['floats', 'localID', 'money', 'coin', 'count_cars', 'friends_count']):
+        if 'floats' in data and 'localID' in data and 'money' in data and 'coin' in data:
         
             print(Colorate.Horizontal(Colors.rainbow, '==========[ PLAYER DETAILS ]=========='))
             
@@ -71,8 +71,7 @@ def load_player_data(cpm):
             
             print(Colorate.Horizontal(Colors.rainbow, f'Cars Owned   : {data["count_cars"]}.'))
             
-            print(Colorate.Horizontal(Colors.rainbow, f'Friends Count: {data["friends_count"]}.'))
-            
+            print(Colorate.Horizontal(Colors.rainbow, f'Friends Count: {data["friends_count"]}.'))    
         else:
             print(Colorate.Horizontal(Colors.rainbow, '! ERROR: new accounts most be signed-in to the game at least once !.'))
             exit(1)
