@@ -57,21 +57,17 @@ def load_player_data(cpm):
     response = cpm.get_player_data()
     if response.get('ok'):
         data = response.get('data')
-        if 'floats' in data and 'localID' in data and 'money' in data and 'coin' in data and 'friends_count' in data and 'count_cars' in data:
+        if 'floats' in data and 'localID' in data and 'money' in data and 'coin' in data:
         
             print(Colorate.Horizontal(Colors.rainbow, '==========[ PLAYER DETAILS ]=========='))
             
-            print(Colorate.Horizontal(Colors.rainbow, f'Name         : {data.get("Name", "UNDEFINED")}.'))
+            print(Colorate.Horizontal(Colors.rainbow, f'Name   : {(data.get("Name") if "Name" in data else "UNDEFINED")}.'))
                 
-            print(Colorate.Horizontal(Colors.rainbow, f'LocalID      : {data["localID"]}.'))
+            print(Colorate.Horizontal(Colors.rainbow, f'LocalID: {data.get("localID")}.'))
             
-            print(Colorate.Horizontal(Colors.rainbow, f'Money        : {data["money"]}.'))
+            print(Colorate.Horizontal(Colors.rainbow, f'Money  : {data.get("money")}.'))
             
-            print(Colorate.Horizontal(Colors.rainbow, f'Coins        : {data["coin"]}.'))
-            
-            print(Colorate.Horizontal(Colors.rainbow, f'Cars Owned   : {data["count_cars", "UNDEFINED"]}.'))
-            
-            print(Colorate.Horizontal(Colors.rainbow, f'Friends Count: {data["friends_count", "UNDEFINED"]}.'))    
+            print(Colorate.Horizontal(Colors.rainbow, f'Coins  : {data.get("coin")}.'))    
         else:
             print(Colorate.Horizontal(Colors.rainbow, '! ERROR: new accounts most be signed-in to the game at least once !.'))
             sleep(1)
