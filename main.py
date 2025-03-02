@@ -69,9 +69,9 @@ def load_player_data(cpm):
             
             print(Colorate.Horizontal(Colors.rainbow, f'Coins        : {data["coin"]}.'))
             
-            print(Colorate.Horizontal(Colors.rainbow, f'Cars Owned   : {data["count_cars"]}.'))
+            print(Colorate.Horizontal(Colors.rainbow, f'Cars Owned   : {data["count_cars", "UNDEFINED"]}.'))
             
-            print(Colorate.Horizontal(Colors.rainbow, f'Friends Count: {data["friends_count"]}.'))    
+            print(Colorate.Horizontal(Colors.rainbow, f'Friends Count: {data["friends_count", "UNDEFINED"]}.'))    
         else:
             print(Colorate.Horizontal(Colors.rainbow, '! ERROR: new accounts most be signed-in to the game at least once !.'))
             exit(1)
