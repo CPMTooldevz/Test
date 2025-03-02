@@ -54,20 +54,25 @@ def banner(console):
     print(Colorate.Horizontal(Colors.rainbow, '=================================================================='))
 
 def load_player_data(cpm):
+def load_player_data(cpm):
     response = cpm.get_player_data()
     if response.get('ok'):
         data = response.get('data')
-        if 'floats' in data and 'localID' in data and 'money' in data and 'coin' in data:
+        if all(k in data for k in ['floats', 'localID', 'money', 'coin', 'count_cars', 'friends_count']):
         
             print(Colorate.Horizontal(Colors.rainbow, '==========[ PLAYER DETAILS ]=========='))
             
-            print(Colorate.Horizontal(Colors.rainbow, f'Name   : {(data.get("Name") if "Name" in data else "UNDEFINED")}.'))
+            print(Colorate.Horizontal(Colors.rainbow, f'Name         : {data.get("Name", "UNDEFINED")}.'))
                 
-            print(Colorate.Horizontal(Colors.rainbow, f'LocalID: {data.get("localID")}.'))
+            print(Colorate.Horizontal(Colors.rainbow, f'LocalID      : {data["localID"]}.'))
             
-            print(Colorate.Horizontal(Colors.rainbow, f'Money  : {data.get("money")}.'))
+            print(Colorate.Horizontal(Colors.rainbow, f'Money        : {data["money"]}.'))
             
-            print(Colorate.Horizontal(Colors.rainbow, f'Coins  : {data.get("coin")}.'))
+            print(Colorate.Horizontal(Colors.rainbow, f'Coins        : {data["coin"]}.'))
+            
+            print(Colorate.Horizontal(Colors.rainbow, f'Cars Owned   : {data["count_cars"]}.'))
+            
+            print(Colorate.Horizontal(Colors.rainbow, f'Friends Count: {data["friends_count"]}.'))
             
         else:
             print(Colorate.Horizontal(Colors.rainbow, '! ERROR: new accounts most be signed-in to the game at least once !.'))
