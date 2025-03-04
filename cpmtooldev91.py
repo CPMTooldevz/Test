@@ -235,7 +235,7 @@ class CPMTooldevz:
         response_decoded = response.json()
         return response_decoded.get("ok")
 
-    def account_tire(self, car_id, tire):
+    def tire_tire1(self, car_id, tire):
         payload = {
         "account_auth": self.auth_token,
         "car_id": car_id,
