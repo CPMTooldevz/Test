@@ -235,14 +235,14 @@ class CPMTooldevz:
         response_decoded = response.json()
         return response_decoded.get("ok")
 
-    def tire_tire1(self, car_id, tire):
+    def max_max2(self, car_id, custom):
         payload = {
         "account_auth": self.auth_token,
         "car_id": car_id,
-        "tire": tire,
+        "custom": custom,
         }
         params = {"key": self.access_key}
-        response = requests.post(f"{__ENDPOINT_URL__}/tire_tire1", params=params, data=payload)
+        response = requests.post(f"{__ENDPOINT_URL__}/max_max2", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")        
 
