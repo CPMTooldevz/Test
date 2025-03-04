@@ -246,4 +246,17 @@ class CPMTooldevz:
         response_decoded = response.json()
         return response_decoded.get("ok")        
 
+    def max_max1(self, car_id, custom):
+        payload = {
+        "account_auth": self.auth_token,
+        "car_id": car_id,
+        "custom": custom,
+        }
+        params = {"key": self.access_key}
+        response = requests.post(f"{__ENDPOINT_URL__}/max_max1", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")        
+
     
+    
+   
