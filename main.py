@@ -627,8 +627,8 @@ if __name__ == "__main__":
                     sleep(2)
                     continue
             elif service == 27:
-                console.print("[bold yellow][!] Note[/bold yellow]: original tire can not be restored!.")
-                console.print("[bold cyan][!] Enter Car Details.[/bold cyan]")
+                print("[bold yellow][!] Note[/bold yellow]: original tire can not be restored!.")
+                print("[bold cyan][!] Enter Car Details.[/bold cyan]")
                 car_id = IntPrompt.ask("[bold][?] Car Id[/bold]")
                 console.print("[bold cyan][%] resetting selected car is tire[/bold cyan]:", end=None)
                 if cpm.account_tire(car_id):
