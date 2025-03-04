@@ -630,7 +630,7 @@ if __name__ == "__main__":
                 console.print("[bold yellow][!] Note[/bold yellow]: original tire can not be restored!.")
                 console.print("[bold cyan][!] Enter Car Details.[/bold cyan]")
                 car_id = IntPrompt.ask("[bold][?] Car Id[/bold]")
-                console.print("[bold cyan][%] resetting selected car is tire[/bold cyan]:",end=None)
+                console.print("[bold cyan][%] resetting selected car is tire[/bold cyan]:", end=None)
                 if cpm.account_tire(car_id):
                     console.print("[bold green]SUCCESFUL (✔)[/bold green]")
                     console.print("================================")
