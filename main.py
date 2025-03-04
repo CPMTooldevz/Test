@@ -609,22 +609,6 @@ if __name__ == "__main__":
                     print(Colorate.Horizontal(Colors.rainbow, '[!] Please use valid values.'))
                     sleep(2)
                     continue
-            elif service == 999:
-                console.print("[bold yellow][!] Note[/bold yellow]: original speed can not be restored!.")
-                console.print("[bold cyan][!] Enter Car Details.[/bold cyan]")
-                car_id = IntPrompt.ask("[bold][?] Car Id[/bold]")
-                console.print("[bold cyan][%] Hacking Car Speed[/bold cyan]:",end=None)
-                if cpm.hack_car_sped(car_id):
-                    console.print("[bold green]SUCCESFUL (✔)[/bold green]")
-                    console.print("================================")
-                    answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
-                    if answ == "y": print(Colorate.Horizontal(Colors.rainbow, f'Thank You for using our tool, please join our telegram channe: @{__CHANNEL_USERNAME__}.'))
-                    else: continue
-                else:
-                    print(Colorate.Horizontal(Colors.rainbow, 'FAILED.'))
-                    print(Colorate.Horizontal(Colors.rainbow, '[!] Please use valid values.'))
-                    sleep(2)
-                    continue
             elif service == 28: # ANGLE
                 print(Colorate.Horizontal(Colors.rainbow, '[!] ENTER CAR DETALIS'))
                 car_id = IntPrompt.ask("[red][?] CAR ID[/red]")
@@ -640,22 +624,18 @@ if __name__ == "__main__":
                     print(Colorate.Horizontal(Colors.rainbow, 'FAILED'))
                     print(Colorate.Horizontal(Colors.rainbow, 'PLEASE TRY AGAIN'))
                     sleep(2)
-                    continue                                        
-            elif service == 27:
+                    continue
+             elif service == 27:
                 console.print("[bold yellow][!] Note[/bold yellow]: original speed can not be restored!.")
-                console.print("[bold cyan][!] Enter Car Details.[/bold cyan]")        
+                console.print("[bold cyan][!] Enter Car Details.[/bold cyan]")
                 car_id = IntPrompt.ask("[bold][?] Car Id[/bold]")
-                new_hp = IntPrompt.ask("[bold][?] Enter new HP[/bold]")
-                new_inner_hp = IntPrompt.ask("[bold][?] Enter new Inner HP[/bold]")
-                new_nm = IntPrompt.ask("[bold][?] Enter new NM[/bold]")
-                new_torque = IntPrompt.ask("[bold][?] Enter new Torque[/bold]")
-                console.print("[bold cyan][%] Hacking Car Speed[/bold cyan]: ", end=None)        
-                if cpm.hack_car_speed(car_id, new_hp, new_inner_hp, new_nm, new_torque):  
+                console.print("[bold cyan][%] Hacking Car Speed[/bold cyan]:",end=None)
+                if cpm.account_tire(car_id):
                     console.print("[bold green]SUCCESFUL (✔)[/bold green]")
                     console.print("================================")
                     answ = Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n")
-                    if answ == "y": print(Colorate.Horizontal(Colors.rainbow, f'Thank You for using our tool, please join our telegram channel: @{__CHANNEL_USERNAME__}.'))
-                    else: continue 
+                    if answ == "y": print(Colorate.Horizontal(Colors.rainbow, f'Thank You for using our tool, please join our telegram channe: @{__CHANNEL_USERNAME__}.'))
+                    else: continue
                 else:
                     print(Colorate.Horizontal(Colors.rainbow, 'FAILED.'))
                     print(Colorate.Horizontal(Colors.rainbow, '[!] Please use valid values.'))
