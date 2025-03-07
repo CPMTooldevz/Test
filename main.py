@@ -5,8 +5,8 @@ from rich.console import Console
 from rich.prompt import Prompt, IntPrompt
 from cpmtooldev91 import CPMTooldevz
 
-__CHANNEL_USERNAME__ = "TELMUNNTEST"
-__GROUP_USERNAME__   = "TELMUNNTEST"
+__CHANNEL_USERNAME__ = "Telmunn"
+__GROUP_USERNAME__   = "Telmn"
 
 def signal_handler(sig, frame):
     print("\n Bye Bye...")
@@ -14,10 +14,10 @@ def signal_handler(sig, frame):
 
 def banner(console):
     os.system('cls' if os.name == 'nt' else 'clear')
-    console.print("[bold green]♕ TELMN[/bold green]: TELMUNNTool.")
-    console.print(f"[bold green]♕ Telegram[/bold green]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue] or [bold blue]@{__GROUP_USERNAME__}[/bold blue].")
+    console.print("[bold green] ♕  Creator[/bold green]: Telmunn.")
+    console.print(f"[bold green]♕  Facebook[/bold green]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue] or [bold blue]@{__GROUP_USERNAME__}[/bold blue].")
     console.print("==================================================")
-    console.print("[bold yellow]! Note[/bold yellow]: Logout from CPM before using this tool !.", end="\n\n")
+    console.print("[bold yellow]! Note[/bold yellow]: Энэ хэрэгслийг ашиглахаасаа өмнө CPM аккоунтаасаа гарна уу !.", end="\n\n")
 
 def get_player_data(cpm):
     data = cpm.get_player_data().get('data')
