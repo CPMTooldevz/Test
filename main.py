@@ -31,8 +31,8 @@ def load_key_data(cpm):
     data = cpm.get_key_data()
     console.print("[bold][red]========[/red][ ACCESS KEY DETAILS ][red]========[/red][/bold]")
     console.print(f"[bold green] Access Key [/bold green]: { data.get('access_key') }.")
-    console.print(f"[bold green] Telegram ID[/bold green]: { data.get('telegram_id') }.")
-    console.print(f"[bold green] Credits    [/bold green]: { data.get('coins') }.", end="\n\n")
+    console.print(f"[bold green] Telegram ID[/bold green]: {data.get('telegram_id')}.")
+    console.print(f"[bold green] Credits    [/bold green]: {data.get('coins') if not data.get('is_unlimited') else 'Unlimited'}.")
 
 def prompt_valid_value(content, tag, password=False):
     while True:
