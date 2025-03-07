@@ -110,7 +110,7 @@ if __name__ == "__main__":
                 console.print("[bold cyan]✶ Insert how much money do you want.[/bold cyan]")
                 amount = IntPrompt.ask("[bold]➤ Amount[/bold]")
                 console.print("[bold cyan]↺ Saving your data[/bold cyan]: ", end=None)
-                if cpm.set_money(amount):
+                if cpm.set_player_money(amount):
                     console.print("[bold green]SUCCESSFUL.[/bold green]")
                     console.print("==================================")
                     answ = Prompt.ask("[bold cyan]➤ Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
@@ -194,8 +194,19 @@ if __name__ == "__main__":
                     console.print("[bold yellow]✶ Please try again.[/bold yellow]")
                     sleep(2)
                     continue
-            elif service == 7: # Unlock All Cars
-                continue
+            elif service == 7: # Unlock Cars
+                console.print("[bold cyan]↺ Unlocking All Cars![/bold cyan]: ", end=None)
+                if cpm.unlock_all_cars():
+                    console.print("[bold green]SUCCESSFUL.[/bold green]")
+                    console.print("==================================")
+                    answ = Prompt.ask("[bold cyan]➤ Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
+                    if answ == "y": console.print(f"[bold yellow]✴ Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
+                    else: continue
+                else:
+                    console.print("[bold red]FAILED.[/bold red]")
+                    console.print("[bold yellow]✶ Please try again.[/bold yellow]")
+                    sleep(2)
+                    continue      
             elif service == 8: # Account Delete
                 console.print("[bold cyan]✶ After deleting your account there is no going back !!.[/bold cyan]")
                 answ = Prompt.ask("[bold cyan]➤ Do You want to Delete this Account ?![/bold cyan]", choices=["y", "n"], default="n")
