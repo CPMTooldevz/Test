@@ -22,15 +22,15 @@ def banner(console):
 def load_player_data(cpm):
     data = cpm.get_player_data()
     console.print("[bold][red]========[/red][ PLAYER DETAILS ][red]========[/red][/bold]")
-    console.print(f"[bold green] Нэр   [/bold green]: { (data.get('Name')    if 'Name' in data else 'UNDEFINED') }.")
-    console.print(f"[bold green] ID    [/bold green]: { (data.get('localID') if 'localID' in data else 'UNDEFINED') }.")
-    console.print(f"[bold green] Мөнгө [/bold green]: { (data.get('money')   if 'money' in data else 'UNDEFINED') }.")
-    console.print(f"[bold green] Зоос  [/bold green]: { (data.get('coin')    if 'coin' in data else 'UNDEFINED') }.")
+    console.print(f"[bold green] Нэр   [/bold green]: {data.get('Name')    if 'Name' in data else 'UNDEFINED')}.")
+    console.print(f"[bold green] ID    [/bold green]: {data.get('localID') if 'localID' in data else 'UNDEFINED')}.")
+    console.print(f"[bold green] Мөнгө [/bold green]: {data.get('money')   if 'money' in data else 'UNDEFINED')}.")
+    console.print(f"[bold green] Зоос  [/bold green]: {data.get('coin')    if 'coin' in data else 'UNDEFINED')}.")
 
 def load_key_data(cpm):
     data = cpm.get_key_data()
     console.print("[bold][red]========[/red][ ACCESS KEY DETAILS ][red]========[/red][/bold]")
-    console.print(f"[bold green] Зөвшөөрлийн түлхүүр[/bold green]: { data.get('access_key') }.")
+    console.print(f"[bold green] Зөвшөөрлийн түлхүүр[/bold green]: {data.get('access_key') }.")
     console.print(f"[bold green] Телеграм ID        [/bold green]: {data.get('telegram_id')}.")
     console.print(f"[bold green] Үлдэгдэл           [/bold green]: {data.get('coins') if not data.get('is_unlimited') else 'Unlimited'}.")
 
