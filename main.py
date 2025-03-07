@@ -107,7 +107,7 @@ if __name__ == "__main__":
             console.print("[bold cyan](10): Найзуудыг устгах ~ 9999999999K[/bold cyan]")
             console.print("[bold cyan](11): Дугаарын хавтан ~ 9999999OOOOOK[/bold cyan]")
             console.print("[bold cyan](00): Гарах[/bold cyan]", end="\n\n")
-            service = IntPrompt.ask("[bold]➤ Үйлчилгээ сонгоно уу [red][0-9 ээс 0][/red][/bold]", choices=["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"], show_choices=False)
+            service = IntPrompt.ask("[bold]➤ Үйлчилгээ сонгоно уу [red][0 ээс 12][/red][/bold]", choices=["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"], show_choices=False)
             if service == 0: # Exit
                 console.print(f"[bold yellow]✴ Манай хэрэгслийг ашигласанд баярлалаа, манай телеграм сувагт нэгдээрэй[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
             elif service == 1: # Increase Money
