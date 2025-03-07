@@ -1,13 +1,5 @@
-##############################################################################
-# Copyright (C) Anas Yuesef <me@anasov.ly> - All Rights Reserved             #
-# Unauthorized copying of this file, via any medium is strictly prohibited   #
-# Proprietary and confidential                                               #
-##############################################################################
-# Written by Anas Yuesef <me@anasov.ly>, 05, May, 2024.                      #
-##############################################################################
-
 import random
-import cpmnuker
+import cpmtooldev91
 import base64
 from time import sleep
 import os, signal, sys
@@ -104,8 +96,8 @@ if __name__ == "__main__":
         acc_password = prompt_valid_value("[bold][?] Account Password[/bold]", "Password", password=False)
         acc_access_key = prompt_valid_value("[bold][?] Access Key[/bold]", "Access Key", password=False)
         console.print("[bold cyan][%] Trying to Login[/bold cyan]: ", end=None)
-        cpm = cpmnuker.CPMNuker(acc_access_key)
-        login_response = cpm.login(acc_email, acc_password)
+        cpm = cpmtooldevz.CPMTooldev91(account_login)
+        login_response = cpm.login(email, password)
         if login_response != 0:
             if login_response == 100:
                 console.print("[bold red]ACCOUNT NOT FOUND (✘)[/bold red].")
@@ -163,7 +155,7 @@ if __name__ == "__main__":
                 amount = IntPrompt.ask("[bold][?] Amount[/bold]")
                 console.print("[bold cyan][%] Saving your data[/bold cyan]: ", end=None)
                 if amount > 0 and amount <= 50000000:
-                    if cpm.set_player_money(amount):
+                    if cpm.set_money(amount):
                         console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
                         console.print("==================================")
                         answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
@@ -184,7 +176,7 @@ if __name__ == "__main__":
                 amount = IntPrompt.ask("[bold][?] Amount[/bold]")
                 console.print("[bold cyan][%] Saving your data[/bold cyan]: ", end=None)
                 if amount > 0 and amount <= 90000:
-                    if cpm.set_player_coins(amount):
+                    if cpm.set_coins(amount):
                         console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
                         console.print("==================================")
                         answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
@@ -205,7 +197,7 @@ if __name__ == "__main__":
                 console.print("[bold red][!] Note:[/bold red]: please don't do King Rank on same account twice.", end=None)
                 sleep(2)
                 console.print("[bold cyan][%] Giving you a King Rank[/bold cyan]: ", end=None)
-                if cpm.set_player_rank():
+                if cpm.set_rank():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
                     console.print("==================================")
                     answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
@@ -221,7 +213,7 @@ if __name__ == "__main__":
                 new_id = Prompt.ask("[bold][?] ID[/bold]")
                 console.print("[bold cyan][%] Saving your data[/bold cyan]: ", end=None)
                 if len(new_id) >= 9 and len(new_id) <= 14 and (' ' in new_id) == False:
-                    if cpm.set_player_localid(new_id.upper()):
+                    if cpm.set_id(new_id.upper()):
                         console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
                         console.print("==================================")
                         answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
@@ -242,7 +234,7 @@ if __name__ == "__main__":
                 new_name = Prompt.ask("[bold][?] Name[/bold]")
                 console.print("[bold cyan][%] Saving your data[/bold cyan]: ", end=None)
                 if len(new_name) >= 0 and len(new_name) <= 30:
-                    if cpm.set_player_name(new_name):
+                    if cpm.set_name(new_name):
                         console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
                         console.print("==================================")
                         answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
@@ -281,7 +273,7 @@ if __name__ == "__main__":
                     continue
             elif service == 7: # Number Plates
                 console.print("[bold cyan][%] Giving you a Number Plates[/bold cyan]: ", end=None)
-                if cpm.set_player_plates():
+                if cpm.set_plates():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
                     console.print("==================================")
                     answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
@@ -326,7 +318,7 @@ if __name__ == "__main__":
                     continue
             elif service == 10: # Delete Friends
                 console.print("[bold cyan][%] Deleting your Friends[/bold cyan]: ", end=None)
-                if cpm.delete_player_friends():
+                if cpm.delete_friends():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
                     console.print("==================================")
                     answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
@@ -379,7 +371,7 @@ if __name__ == "__main__":
                     continue
             elif service == 14: # Disable Engine Damage
                 console.print("[bold cyan][%] Unlocking Disable Damage[/bold cyan]: ", end=None)
-                if cpm.disable_engine_damage():
+                if cpm.disable_damage():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
                     console.print("==================================")
                     answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
@@ -434,7 +426,7 @@ if __name__ == "__main__":
                 amount = IntPrompt.ask("[bold][?] Amount[/bold]")
                 console.print("[bold cyan][%] Changing your data[/bold cyan]: ", end=None)
                 if amount > 0 and amount <= 999:
-                    if cpm.set_player_wins(amount):
+                    if cpm.set_race_wins(amount):
                         console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
                         console.print("==================================")
                         answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
@@ -455,7 +447,7 @@ if __name__ == "__main__":
                 amount = IntPrompt.ask("[bold][?] Amount[/bold]")
                 console.print("[bold cyan][%] Changing your data[/bold cyan]: ", end=None)
                 if amount > 0 and amount <= 999:
-                    if cpm.set_player_loses(amount):
+                    if cpm.set_race_loses(amount):
                         console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
                         console.print("==================================")
                         answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
@@ -476,7 +468,7 @@ if __name__ == "__main__":
                 to_email = prompt_valid_value("[bold][?] Email[/bold]", "Email", password=False)
                 to_password = prompt_valid_value("[bold][?] Password[/bold]", "Password", password=False)
                 console.print("[bold cyan][%] Cloning your account[/bold cyan]: ", end=None)
-                if cpm.account_clone(to_email, to_password):
+                if cpm.clone(to_email, to_password):
                     console.print("[bold green]SUCCESSFUL.[/bold green]")
                     console.print("==================================")
                     answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
@@ -490,7 +482,7 @@ if __name__ == "__main__":
             elif service == 21: # Unlock all cars
                 console.print("[bold yellow]! Note[/bold yellow]: this function takes a while to complete, please don't cancel.")
                 console.print("[bold cyan][%] Unlocking All Cars[/bold cyan]: ", end=None)
-                if cpm.unlock_all_cars():
+                if cpm.unlock_cars():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
                     console.print("==================================")
                     answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
