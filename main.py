@@ -89,8 +89,8 @@ if __name__ == "__main__":
             sleep(2)
         while True:
             banner(console)
-            load_player_data(cpm)
-            load_key_data(cpm)
+            get_player_data(cpm)
+            get_key_data(cpm)
             console.print("[bold cyan](01): Мөнгө нэмэгдүүлэх ~ 9999999K[/bold cyan]")
             console.print("[bold cyan](02): Зоосыг нэмэгдүүлэх ~ 99999999K[/bold cyan]")
             console.print("[bold cyan](03): Хаан зэрэглэл ~ 99999999K[/bold cyan]")
