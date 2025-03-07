@@ -20,15 +20,12 @@ def banner(console):
     console.print("[bold yellow]! Note[/bold yellow]: Logout from CPM before using this tool !.", end="\n\n")
 
 def load_player_data(cpm):
-    response = cpm.get_player_data()
-    if response.get('ok'):
-        data = response.get('data')
-        if 'floats' in data and 'localID' in data and 'money' in data and 'coin' in data:
+    data = cpm.get_player_data()
     console.print("[bold][red]========[/red][ PLAYER DETAILS ][red]========[/red][/bold]")
-    console.print(f"[bold green] Нэр   [/bold green]: { (data.get('Name')      if 'Name' in data else 'UNDEFINED') }.")
-    console.print(f"[bold green] ID[/bold green]    : { (data.get('localID')   if 'localID' in data else 'UNDEFINED') }.")
-    console.print(f"[bold green] Мөнгө [/bold green]: { (data.get('money')     if 'money' in data else 'UNDEFINED') }.")
-    console.print(f"[bold green] Зоос  [/bold green]: { (data.get('coin')      if 'coin' in data else 'UNDEFINED') }.")
+    console.print(f"[bold green] Нэр   [/bold green]: { (data.get('Name')    if 'Name' in data else 'UNDEFINED') }.")
+    console.print(f"[bold green] ID    [/bold green]: { (data.get('localID') if 'localID' in data else 'UNDEFINED') }.")
+    console.print(f"[bold green] Мөнгө [/bold green]: { (data.get('money')   if 'money' in data else 'UNDEFINED') }.")
+    console.print(f"[bold green] Зоос  [/bold green]: { (data.get('coin')    if 'coin' in data else 'UNDEFINED') }.")
 
 def load_key_data(cpm):
     data = cpm.get_key_data()
