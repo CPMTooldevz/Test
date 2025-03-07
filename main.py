@@ -20,7 +20,7 @@ def banner(console):
     console.print("[bold yellow]! Note[/bold yellow]: Logout from CPM before using this tool !.", end="\n\n")
 
 def load_player_data(cpm):
-    data = cpm.get_player_data()
+    data = cpm.get_data()
     console.print("[bold][red]========[/red][ PLAYER DETAILS ][red]========[/red][/bold]")
     console.print(f"[bold green] Нэр   [/bold green]: {data.get('Name') if 'Name' in data else 'UNDEFINED'}.")
     console.print(f"[bold green] ID    [/bold green]: {data.get('localID') if 'localID' in data else 'UNDEFINED'}.")
