@@ -5,8 +5,8 @@ from rich.console import Console
 from rich.prompt import Prompt, IntPrompt
 from cpmtooldev91 import CPMTooldevz
 
-__CHANNEL_USERNAME__ = "CPMNuker"
-__GROUP_USERNAME__   = "CPMNukerChat"
+__CHANNEL_USERNAME__ = "TELMUNNTEST"
+__GROUP_USERNAME__   = "TELMUNNTEST"
 
 def signal_handler(sig, frame):
     print("\n Bye Bye...")
@@ -14,7 +14,7 @@ def signal_handler(sig, frame):
 
 def banner(console):
     os.system('cls' if os.name == 'nt' else 'clear')
-    console.print("[bold green]♕ CPMNuker[/bold green]: Car Parking Multiplayer Hacking Tool.")
+    console.print("[bold green]♕ TELMN[/bold green]: TELMUNNTool.")
     console.print(f"[bold green]♕ Telegram[/bold green]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue] or [bold blue]@{__GROUP_USERNAME__}[/bold blue].")
     console.print("==================================================")
     console.print("[bold yellow]! Note[/bold yellow]: Logout from CPM before using this tool !.", end="\n\n")
@@ -22,17 +22,17 @@ def banner(console):
 def load_player_data(cpm):
     data = cpm.get_player_data().get('data')
     console.print("[bold][red]========[/red][ PLAYER DETAILS ][red]========[/red][/bold]")
-    console.print(f"[bold green] Name   [/bold green]: { (data.get('Name')      if 'Name' in data else 'UNDEFINED') }.")
-    console.print(f"[bold green] LocalID[/bold green]: { (data.get('localID')   if 'localID' in data else 'UNDEFINED') }.")
-    console.print(f"[bold green] Money  [/bold green]: { (data.get('money')     if 'money' in data else 'UNDEFINED') }.")
-    console.print(f"[bold green] Coins  [/bold green]: { (data.get('coin')      if 'coin' in data else 'UNDEFINED') }.")
+    console.print(f"[bold green] Нэр   [/bold green]: { (data.get('Name')      if 'Name' in data else 'UNDEFINED') }.")
+    console.print(f"[bold green] ID[/bold green]: { (data.get('localID')   if 'localID' in data else 'UNDEFINED') }.")
+    console.print(f"[bold green] Мөнгө  [/bold green]: { (data.get('money')     if 'money' in data else 'UNDEFINED') }.")
+    console.print(f"[bold green] Зоос  [/bold green]: { (data.get('coin')      if 'coin' in data else 'UNDEFINED') }.")
 
 def load_key_data(cpm):
     data = cpm.get_key_data()
     console.print("[bold][red]========[/red][ ACCESS KEY DETAILS ][red]========[/red][/bold]")
-    console.print(f"[bold green] Access Key [/bold green]: { data.get('access_key') }.")
-    console.print(f"[bold green] Telegram ID[/bold green]: {data.get('telegram_id')}.")
-    console.print(f"[bold green] Credits    [/bold green]: {data.get('coins') if not data.get('is_unlimited') else 'Unlimited'}.")
+    console.print(f"[bold green] Зөвшөөрлийн түлхүүр[/bold green]: { data.get('access_key') }.")
+    console.print(f"[bold green] Телеграм ID[/bold green]: {data.get('telegram_id')}.")
+    console.print(f"[bold green] Үлдэгдэл    [/bold green]: {data.get('coins') if not data.get('is_unlimited') else 'Unlimited'}.")
 
 def prompt_valid_value(content, tag, password=False):
     while True:
@@ -91,17 +91,17 @@ if __name__ == "__main__":
             banner(console)
             load_player_data(cpm)
             load_key_data(cpm)
-            console.print("[bold cyan](01): Increase Money ~ 1K[/bold cyan]")
-            console.print("[bold cyan](02): Increase Coins ~ 3.5K[/bold cyan]")
-            console.print("[bold cyan](03): King Rank ~ 4K[/bold cyan]")
-            console.print("[bold cyan](04): Change ID ~ 3.5K[/bold cyan]")
-            console.print("[bold cyan](05): Change Name ~ 100[/bold cyan]")
-            console.print("[bold cyan](06): Change Name (Rainbow) ~ 100[/bold cyan]")
-            console.print("[bold cyan](07): Unlock All Cars ~ 5K[/bold cyan]")
-            console.print("[bold cyan](08): Account Delete ~ FREE[/bold cyan]")
-            console.print("[bold cyan](09): Account Register ~ FREE[/bold cyan]")
-            console.print("[bold cyan](10): Delete Friends ~ 500[/bold cyan]")
-            console.print("[bold cyan](11): Number Plates ~ 2K[/bold cyan]")
+            console.print("[bold cyan](01): Increase Money ~ 9999999K[/bold cyan]")
+            console.print("[bold cyan](02): Increase Coins ~ 99999999K[/bold cyan]")
+            console.print("[bold cyan](03): King Rank ~ 99999999K[/bold cyan]")
+            console.print("[bold cyan](04): Change ID ~ 999999999K[/bold cyan]")
+            console.print("[bold cyan](05): Change Name ~ 999999K[/bold cyan]")
+            console.print("[bold cyan](06): Change Name (Rainbow) ~ 99999999K[/bold cyan]")
+            console.print("[bold cyan](07): Unlock All Cars ~ 99999999K[/bold cyan]")
+            console.print("[bold cyan](08): Account Delete ~ 9999999999K[/bold cyan]")
+            console.print("[bold cyan](09): Account Register ~ 99999999999K[/bold cyan]")
+            console.print("[bold cyan](10): Delete Friends ~ 9999999999K[/bold cyan]")
+            console.print("[bold cyan](11): Number Plates ~ 9999999OOOOOK[/bold cyan]")
             console.print("[bold cyan](00): Exit[/bold cyan]", end="\n\n")
             service = IntPrompt.ask("[bold]➤ Select a Service [red][0-9 or 0][/red][/bold]", choices=["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"], show_choices=False)
             if service == 0: # Exit
