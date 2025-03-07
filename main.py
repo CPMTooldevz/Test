@@ -279,15 +279,14 @@ if __name__ == "__main__":
                     console.print("[bold green]АМЖИЛТТАЙ.[/bold green]")
                     console.print("==================================")
                     answ = Prompt.ask("[bold cyan]➤ Та гарахыг хүсэж байна уу?[/bold cyan]", choices=["y", "n"], default="n")
-                    if answ == "y":
-                    console.print(f"[bold yellow]✴ Манай хэрэгслийг ашигласанд баярлалаа, манай телеграм сувагт нэгдээрэй[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
+                    if answ == "y": console.print(f"[bold yellow]✴ Манай хэрэгслийг ашигласанд баярлалаа, манай телеграм сувагт нэгдээрэй[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
                    else: continue
                else:
                    console.print("[bold red]АМЖИЛТГҮЙ.[/bold red]")
                    console.print("[bold yellow]✶ Дахин оролдоно уу.[/bold yellow]")
                   sleep(2)
                   continue
-        else:   continue
-        break
-    break
+          else: continue
+          break
+      break
     
