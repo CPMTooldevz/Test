@@ -96,7 +96,7 @@ if __name__ == "__main__":
         acc_password = prompt_valid_value("[bold][?] Account Password[/bold]", "Password", password=False)
         acc_access_key = prompt_valid_value("[bold][?] Access Key[/bold]", "Access Key", password=False)
         console.print("[bold cyan][%] Trying to Login[/bold cyan]: ", end=None)
-        cpm = cpmtooldev91.CPMTooldev91(account_login)
+        cpm = cpmtooldev91.Test(account_login)
         login_response = cpm.login(email, password)
         if login_response != 0:
             if login_response == 100:
