@@ -1,16 +1,9 @@
-﻿#!/usr/bin/python
-
-# Copyright (C) Anasov <me@anasov.ly> - All Rights Reserved
-# Unauthorized copying of this file, via any medium is strictly prohibited
-# Proprietary and confidential
-# Written by Anasov <me@anasov.ly>, 05, May, 2024.
-
 import random
 from time import sleep
 import os, signal, sys
 from rich.console import Console
 from rich.prompt import Prompt, IntPrompt
-from cpmnuker import CPMNuker
+from cpmtooldev91 import CPMTooldevz
 
 __CHANNEL_USERNAME__ = "CPMNuker"
 __GROUP_USERNAME__   = "CPMNukerChat"
@@ -75,7 +68,7 @@ if __name__ == "__main__":
         acc_password = prompt_valid_value("[bold]➤ Account Password[/bold]", "Password", password=False)
         acc_access_key = prompt_valid_value("[bold]➤ Access Key[/bold]", "Access Key", password=False)
         console.print("[bold cyan]↻ Trying to Login[/bold cyan]: ", end=None)
-        cpm = CPMNuker(acc_access_key)
+        cpm = CPMNTooldevz(acc_access_key)
         login_response = cpm.login(acc_email, acc_password)
         if login_response != 0:
             if login_response == 100:
@@ -117,7 +110,7 @@ if __name__ == "__main__":
                 console.print("[bold cyan]✶ Insert how much money do you want.[/bold cyan]")
                 amount = IntPrompt.ask("[bold]➤ Amount[/bold]")
                 console.print("[bold cyan]↺ Saving your data[/bold cyan]: ", end=None)
-                if cpm.set_player_money(amount):
+                if cpm.set_money(amount):
                     console.print("[bold green]SUCCESSFUL.[/bold green]")
                     console.print("==================================")
                     answ = Prompt.ask("[bold cyan]➤ Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
