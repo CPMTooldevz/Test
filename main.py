@@ -74,16 +74,20 @@ if __name__ == "__main__":
             if login_response == 100:
                 console.print("[bold red]Аккоунт олдсонгүй![/bold red].")
                 sleep(2)
+                continue
             elif login_response == 101:
                 console.print("[bold red]Нууц үг буруу байна![/bold red].")
                 sleep(2)
+                continue
             elif login_response == 103:
                 console.print("[bold red] Зөвшөөрлийн түлхүүр буруу байна![/bold red].")
                 sleep(2)
+                continue
             else:
                 console.print("[bold red]Дахин оролдоно уу[/bold red].")
                 console.print("[bold yellow]! Note:[/bold yellow]: Талбаруудыг бүрэн бөглөсөн эсэхээ шалгаарай !.")
                 sleep(2)
+                continue
         else:
             console.print("[bold green]АМЖИЛТТАЙ![/bold green].")
             sleep(2)
